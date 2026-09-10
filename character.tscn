@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://eygorjdcwkhu"]
+
+[ext_resource type="Script" uid="uid://dnekrpywkyu2a" path="res://character.gd" id="1_glpr6"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_vu45j"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_glpr6"]
+albedo_color = Color(0.8553096, 6.256998e-07, 0.47322434, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_glpr6"]
+radius = 0.49
+
+[node name="Character" type="CharacterBody3D" unique_id=193363438]
+script = ExtResource("1_glpr6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1943479026]
+mesh = SubResource("CapsuleMesh_vu45j")
+surface_material_override/0 = SubResource("StandardMaterial3D_glpr6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=667152792]
+shape = SubResource("CapsuleShape3D_glpr6")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1811640050]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44558918, 0.16247177)
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D" unique_id=1458094314]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01435411, -0.7269701)
+target_position = Vector3(0, 0, -5)
+collision_mask = 2
+
+[node name="Label3D" type="Label3D" parent="Camera3D" unique_id=16824040]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.014, -0.75)
+fixed_size = true
+text = "+"

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b6sj8pikchvgd"]
+
+[ext_resource type="PackedScene" uid="uid://l3g2odl3ifp6" path="res://grass_block2.0.glb" id="1_kl5j8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kl5j8"]
+
+[node name="grassBlock" type="StaticBody3D" unique_id=1385969134]
+collision_layer = 3
+collision_mask = 3
+
+[node name="grass_block2_0" parent="." unique_id=811174780 instance=ExtResource("1_kl5j8")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.5, -0.5, -0.5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1991542266]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.5, -0.5)
+shape = SubResource("BoxShape3D_kl5j8")

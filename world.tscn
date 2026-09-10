@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://bqm67xgocch0t"]
+
+[ext_resource type="Script" uid="uid://11ws28iefaoa" path="res://world.gd" id="1_tlwt5"]
+[ext_resource type="PackedScene" uid="uid://eygorjdcwkhu" path="res://character.tscn" id="2_fj7yv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fj7yv"]
+size = Vector3(100, 100, 100)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fj7yv"]
+size = Vector2(100, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fj7yv"]
+albedo_color = Color(0, 1, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tlwt5"]
+size = Vector3(100, 100, 100)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_tlwt5"]
+size = Vector2(100, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tlwt5"]
+albedo_color = Color(0.12941177, 1, 1, 1)
+
+[node name="World" type="Node3D" unique_id=1590378209]
+script = ExtResource("1_tlwt5")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=2022688875]
+transform = Transform3D(1, 0, 0, 0, -0.0106113795, 0.99994373, 0, -0.99994373, -0.0106113795, 0, 11.296314, 0)
+light_energy = 16.0
+spot_range = 64.226
+
+[node name="Character" parent="." unique_id=193363438 instance=ExtResource("2_fj7yv")]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 1, 4, 1)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1768617038]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1076988002]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -50)
+shape = SubResource("BoxShape3D_fj7yv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1067127383]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("PlaneMesh_fj7yv")
+surface_material_override/0 = SubResource("StandardMaterial3D_fj7yv")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="." unique_id=862729208]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2" unique_id=989919189]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 0, 0)
+shape = SubResource("BoxShape3D_tlwt5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2" unique_id=310750430]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, 0, 0)
+mesh = SubResource("PlaneMesh_tlwt5")
+surface_material_override/0 = SubResource("StandardMaterial3D_tlwt5")
