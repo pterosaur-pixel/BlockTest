@@ -3,12 +3,14 @@
 [ext_resource type="Script" uid="uid://dnekrpywkyu2a" path="res://character.gd" id="1_glpr6"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_vu45j"]
+radius = 0.48
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_glpr6"]
 albedo_color = Color(0.8553096, 6.256998e-07, 0.47322434, 1)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_glpr6"]
 radius = 0.49
+height = 1.9
 
 [node name="Character" type="CharacterBody3D" unique_id=193363438]
 script = ExtResource("1_glpr6")
@@ -24,11 +26,20 @@ shape = SubResource("CapsuleShape3D_glpr6")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44558918, 0.16247177)
 
 [node name="RayCast3D" type="RayCast3D" parent="Camera3D" unique_id=1458094314]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01435411, -0.7269701)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.013999999, -0.6482918)
 target_position = Vector3(0, 0, -5)
 collision_mask = 2
 
 [node name="Label3D" type="Label3D" parent="Camera3D" unique_id=16824040]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.014, -0.75)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.013999999, -0.64491564)
+no_depth_test = true
 fixed_size = true
+render_priority = 1
 text = "+"
+
+[node name="Active Mat" type="Label3D" parent="Camera3D" unique_id=1041140183]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.33478093, -0.6467736)
+no_depth_test = true
+fixed_size = true
+render_priority = 1
+text = "Grass"

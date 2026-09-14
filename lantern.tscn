@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://g54ng6uouwj0"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_0gnwh"]
+top_radius = 0.3
+bottom_radius = 0.3
+height = 0.7
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0gnwh"]
+albedo_color = Color(0.3722513, 0.3722513, 0.37225124, 1)
+metallic = 0.49
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0gnwh"]
+
+[node name="Lantern" type="StaticBody3D" unique_id=581088269]
+collision_layer = 3
+collision_mask = 3
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=247103891]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.65, -0.5)
+mesh = SubResource("CylinderMesh_0gnwh")
+surface_material_override/0 = SubResource("StandardMaterial3D_0gnwh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1024583191]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.5, -0.5)
+shape = SubResource("BoxShape3D_0gnwh")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=620712366]
+light_color = Color(1, 1, 0.7764706, 1)
+light_energy = 4.0
