@@ -28,7 +28,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44558918, 0.16247177)
 [node name="RayCast3D" type="RayCast3D" parent="Camera3D" unique_id=1458094314]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.013999999, -0.6482918)
 target_position = Vector3(0, 0, -5)
-collision_mask = 2
+collision_mask = 6
 
 [node name="Label3D" type="Label3D" parent="Camera3D" unique_id=16824040]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.013999999, -0.64491564)
